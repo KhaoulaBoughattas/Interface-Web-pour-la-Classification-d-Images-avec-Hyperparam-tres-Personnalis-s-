@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>KR Image Classification</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Classification of images with custom hyperparameters" name="description">
+    
+        <!-- Google Web Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Upload Images</h1>
+        <!-- Image Upload Form -->
+        <form id="uploadForm" action="chossing.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="imageUpload">Select Images:</label>
+                <input type="file" id="imageUpload" name="imageUpload[]" class="form-control-file" multiple required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        <!-- Image Preview and Placeholder for Results -->
+        <div id="resultDisplay" class="mt-4" style="display:none;">
+            <h3>Uploaded Images:</h3>
+            <div id="imagePreviews" class="d-flex flex-wrap"></div>
+            <h4>Classification Result:</h4>
+            <p><strong>Prediction:</strong> <span id="predictionResult">[Your classification result here]</span></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Handle form submission and image preview
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const imageUploads = document.getElementById("imageUpload").files;
+            const imagePreviewsDiv = document.getElementById("imagePreviews");
+            imagePreviewsDiv.innerHTML = '';
+
+            if (imageUploads.length > 0) {
+                for (let i = 0; i < imageUploads.length; i++) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const imgElement = document.createElement("img");
+                        imgElement.src = event.target.result;
+                        imgElement.classList.add("img-thumbnail", "m-2");
+                        imgElement.style.maxWidth = "150px";
+                        imagePreviewsDiv.appendChild(imgElement);
+                    };
+                    reader.readAsDataURL(imageUploads[i]);
+                }
+                document.getElementById("resultDisplay").style.display = "block";
+            } else {
+                alert("Please select at least one image.");
+            }
+
+            // Send the form data (image upload) to PHP script for processing
+            fetch("upload.php", {
+                method: "POST",
+                body: new FormData(document.getElementById("uploadForm"))
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById("predictionResult").innerText = result; // Display the result from PHP (classification result)
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

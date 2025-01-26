@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>KR Image Classification</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Classification of images with custom hyperparameters" name="description">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Start Image Classification Training</h1>
+        <p>Review the parameters and start the training process.</p>
+
+        <form action="start_training.php" method="POST">
+            <!-- Hidden Inputs to Send Hyperparameters -->
+            <input type="hidden" name="learningRate" id="hiddenLearningRate">
+            <input type="hidden" name="epochs" id="hiddenEpochs">
+            <input type="hidden" name="patience" id="hiddenPatience">
+            <input type="hidden" name="monitor" id="hiddenMonitor">
+            <input type="hidden" name="optimizer" id="hiddenOptimizer">
+            <input type="hidden" name="modelName" id="hiddenModelName">
+            <input type="hidden" name="activationFunction" id="hiddenActivationFunction">
+            <input type="hidden" name="validationSplit" id="hiddenValidationSplit">
+            <input type="hidden" name="testSplit" id="hiddenTestSplit">
+            <input type="hidden" name="imageDirectory" id="hiddenImageDirectory">
+
+            <!-- Start Training Button -->
+            <button type="submit" class="btn btn-primary btn-lg">Start Training</button>
+        </form>
+    </div>
+
+    <script>
+        // Example: Dynamically set hidden inputs based on user choices from `parametresimg.html`
+        document.getElementById("hiddenLearningRate").value = localStorage.getItem("learningRate") || "0.001";
+        document.getElementById("hiddenEpochs").value = localStorage.getItem("epochs") || "30";
+        document.getElementById("hiddenPatience").value = localStorage.getItem("patience") || "5";
+        document.getElementById("hiddenMonitor").value = localStorage.getItem("monitor") || "val_loss";
+        document.getElementById("hiddenOptimizer").value = localStorage.getItem("optimizer") || "Adam";
+        document.getElementById("hiddenModelName").value = localStorage.getItem("modelName") || "my_model";
+        document.getElementById("hiddenActivationFunction").value = localStorage.getItem("activationFunction") || "ReLU";
+        document.getElementById("hiddenValidationSplit").value = localStorage.getItem("validationSplit") || "0.2";
+        document.getElementById("hiddenTestSplit").value = localStorage.getItem("testSplit") || "0.1";
+        document.getElementById("hiddenImageDirectory").value = localStorage.getItem("imageDirectory") || "/path/to/images";
+    </script>
+</body>
+</html>

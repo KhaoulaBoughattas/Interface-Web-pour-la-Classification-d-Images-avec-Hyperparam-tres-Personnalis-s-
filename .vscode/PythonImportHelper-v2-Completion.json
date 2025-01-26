@@ -1,0 +1,313 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "keras",
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "isExtraImport": true,
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow_hub",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow_hub",
+        "description": "tensorflow_hub",
+        "detail": "tensorflow_hub",
+        "documentation": {}
+    },
+    {
+        "label": "ModelCheckpoint",
+        "importPath": "tensorflow.keras.callbacks",
+        "description": "tensorflow.keras.callbacks",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "EarlyStopping",
+        "importPath": "tensorflow.keras.callbacks",
+        "description": "tensorflow.keras.callbacks",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "ReduceLROnPlateau",
+        "importPath": "tensorflow.keras.callbacks",
+        "description": "tensorflow.keras.callbacks",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "args = sys.argv[1:]\nif len(args) < 6:\n    print(\"Error: Not enough arguments provided.\")\n    sys.exit(1)\n# Extract hyperparameters\nlearning_rate = float(args[0])\nbatch_size = int(args[1])\nepochs = int(args[2])\ndropout_rate = float(args[3])\noptimizer_name = args[4]",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "learning_rate",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "learning_rate = float(args[0])\nbatch_size = int(args[1])\nepochs = int(args[2])\ndropout_rate = float(args[3])\noptimizer_name = args[4]\nloss_function = args[5]\n# Define paths\nupload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "batch_size",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "batch_size = int(args[1])\nepochs = int(args[2])\ndropout_rate = float(args[3])\noptimizer_name = args[4]\nloss_function = args[5]\n# Define paths\nupload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "epochs",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "epochs = int(args[2])\ndropout_rate = float(args[3])\noptimizer_name = args[4]\nloss_function = args[5]\n# Define paths\nupload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "dropout_rate",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "dropout_rate = float(args[3])\noptimizer_name = args[4]\nloss_function = args[5]\n# Define paths\nupload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "optimizer_name",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "optimizer_name = args[4]\nloss_function = args[5]\n# Define paths\nupload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)\n# Prepare the dataset",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "loss_function",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "loss_function = args[5]\n# Define paths\nupload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)\n# Prepare the dataset\nimg_size = 224",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "upload_dir",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "upload_dir = 'uploads/'\nresult_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)\n# Prepare the dataset\nimg_size = 224\ntry:\n    dataset = tf.keras.preprocessing.image_dataset_from_directory(",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "result_dir",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "result_dir = 'results/'\ngraph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)\n# Prepare the dataset\nimg_size = 224\ntry:\n    dataset = tf.keras.preprocessing.image_dataset_from_directory(\n        upload_dir,",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "graph_file",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "graph_file = os.path.join(result_dir, 'graph.png')\noutput_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)\n# Prepare the dataset\nimg_size = 224\ntry:\n    dataset = tf.keras.preprocessing.image_dataset_from_directory(\n        upload_dir,\n        image_size=(img_size, img_size),",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "output_file",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "output_file = os.path.join(result_dir, 'output.txt')\n# Ensure the results directory exists\nos.makedirs(result_dir, exist_ok=True)\n# Prepare the dataset\nimg_size = 224\ntry:\n    dataset = tf.keras.preprocessing.image_dataset_from_directory(\n        upload_dir,\n        image_size=(img_size, img_size),\n        batch_size=batch_size,",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "img_size",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "img_size = 224\ntry:\n    dataset = tf.keras.preprocessing.image_dataset_from_directory(\n        upload_dir,\n        image_size=(img_size, img_size),\n        batch_size=batch_size,\n        label_mode='categorical'\n    )\nexcept Exception as e:\n    with open(output_file, 'w') as f:",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "model = keras.Sequential([\n    keras.layers.Rescaling(1./255, input_shape=(img_size, img_size, 3)),\n    keras.layers.Conv2D(32, (3, 3), activation='relu'),\n    keras.layers.MaxPooling2D(),\n    keras.layers.Conv2D(64, (3, 3), activation='relu'),\n    keras.layers.MaxPooling2D(),\n    keras.layers.Flatten(),\n    keras.layers.Dense(128, activation='relu'),\n    keras.layers.Dropout(dropout_rate),\n    keras.layers.Dense(len(dataset.class_names), activation='softmax')",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "history",
+        "kind": 5,
+        "importPath": "scripts.process_images",
+        "description": "scripts.process_images",
+        "peekOfCode": "history = model.fit(dataset, epochs=epochs)\n# Save the results\nwith open(output_file, 'w') as f:\n    f.write(f\"Training completed successfully.\\n\")\n    f.write(f\"Epochs: {epochs}, Batch Size: {batch_size}\\n\")\n    f.write(f\"Learning Rate: {learning_rate}, Dropout Rate: {dropout_rate}\\n\")\n    f.write(f\"Optimizer: {optimizer_name}, Loss Function: {loss_function}\\n\")\n    f.write(f\"Class Names: {', '.join(dataset.class_names)}\\n\")\n# Plot the training performance\nplt.figure(figsize=(8, 6))",
+        "detail": "scripts.process_images",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "image_classification",
+        "description": "image_classification",
+        "peekOfCode": "def main(args):\n    # Hyperparameters from command line\n    learning_rate = args.learning_rate\n    epochs = args.epochs\n    patience = args.patience\n    monitor_metric = args.monitor\n    optimizer_name = args.optimizer\n    model_name = args.model_name\n    activation_function = args.activation_function\n    validation_split = args.validation_split",
+        "detail": "image_classification",
+        "documentation": {}
+    },
+    {
+        "label": "learning_rate",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "learning_rate = float(sys.argv[1])\nepochs = int(sys.argv[2])\npatience = int(sys.argv[3])\nmonitor = sys.argv[4]\noptimizer = sys.argv[5]\nmodel_name = sys.argv[6]\nactivation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "epochs",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "epochs = int(sys.argv[2])\npatience = int(sys.argv[3])\nmonitor = sys.argv[4]\noptimizer = sys.argv[5]\nmodel_name = sys.argv[6]\nactivation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "patience",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "patience = int(sys.argv[3])\nmonitor = sys.argv[4]\noptimizer = sys.argv[5]\nmodel_name = sys.argv[6]\nactivation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "monitor",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "monitor = sys.argv[4]\noptimizer = sys.argv[5]\nmodel_name = sys.argv[6]\nactivation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "optimizer",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "optimizer = sys.argv[5]\nmodel_name = sys.argv[6]\nactivation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")\nprint(f\"Epochs: {epochs}\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "model_name",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "model_name = sys.argv[6]\nactivation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")\nprint(f\"Epochs: {epochs}\")\nprint(f\"Patience: {patience}\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "activation_function",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "activation_function = sys.argv[7]\nvalidation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")\nprint(f\"Epochs: {epochs}\")\nprint(f\"Patience: {patience}\")\nprint(f\"Monitor: {monitor}\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "validation_split",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "validation_split = float(sys.argv[8])\ntest_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")\nprint(f\"Epochs: {epochs}\")\nprint(f\"Patience: {patience}\")\nprint(f\"Monitor: {monitor}\")\nprint(f\"Optimizer: {optimizer}\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "test_split",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "test_split = float(sys.argv[9])\nimage_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")\nprint(f\"Epochs: {epochs}\")\nprint(f\"Patience: {patience}\")\nprint(f\"Monitor: {monitor}\")\nprint(f\"Optimizer: {optimizer}\")\nprint(f\"Model Name: {model_name}\")",
+        "detail": "train_model",
+        "documentation": {}
+    },
+    {
+        "label": "image_directory",
+        "kind": 5,
+        "importPath": "train_model",
+        "description": "train_model",
+        "peekOfCode": "image_directory = sys.argv[10]\n# Exemple de traitement\nprint(f\"Starting training with the following parameters:\")\nprint(f\"Learning Rate: {learning_rate}\")\nprint(f\"Epochs: {epochs}\")\nprint(f\"Patience: {patience}\")\nprint(f\"Monitor: {monitor}\")\nprint(f\"Optimizer: {optimizer}\")\nprint(f\"Model Name: {model_name}\")\nprint(f\"Activation Function: {activation_function}\")",
+        "detail": "train_model",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,6 @@
+{
+    "image1.jpg": {"Predicted Class": "Cat", "Confidence": 0.92},
+    "image2.jpg": {"Predicted Class": "Dog", "Confidence": 0.85},
+    "image3.jpg": {"Predicted Class": "Bird", "Confidence": 0.78}
+  }
+  
